@@ -1,0 +1,14 @@
+sl=opcuaserverinfo(172.17.24.119');
+s2=opcuaserverinfo(172.17.24.121);
+x1 =opcua(sl);
+x2=opcua(s2);
+connect(xl);
+connect(x2);
+yl=browseNamespace(x1);
+y2=browseNamespace(x2);
+while 1
+a=readValue(x1,y1(1,1));
+writeValue(x2,y2(1,2),a);
+b=readValue(x2,y2(1,1));
+writeValue(x1 ,yl (1 ,2),b);
+end
